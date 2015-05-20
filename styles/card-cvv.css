@@ -1,0 +1,40 @@
+.card {
+	font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 250px;
+	height: 132px;
+	color: #767f86;
+	background-color: #fafafa;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .25);
+	border-radius: 8px;
+	padding-top: 22px;
+	position: relative;
+	margin: 20px auto;
+}
+.card-barcode {
+	height: 26px;
+	background-color: #5e656b;
+	margin-bottom: 8px;
+}
+.card-signature {
+	padding: 4px 0 4px 10px;
+	font-style: italic;
+}
+.card-code {
+	float: right;
+	margin-right: 10px;
+	color: #78d216;
+	background-color: #FFF;
+	padding: 4px 8px;
+}
+.card-caption {
+	padding: 10px;
+}
+.card-circle {
+	width: 56px;
+	height: 56px;
+	border: 1px solid #F00;
+	border-radius: 50%;
+	position: absolute;
+	top: 38px;
+	right: 0;
+}

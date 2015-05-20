@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>A HTML5 Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+	body {
+
+	}
+	.card {
+		font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+		width: 250px;
+		height: 132px;
+		color: #767f86;
+		background-color: #fafafa;
+		box-shadow: 0 0 2px rgba(0, 0, 0, .25);
+		border-radius: 8px;
+		padding-top: 22px;
+		position: relative;
+	}
+	.card-barcode {
+		height: 26px;
+		background-color: #5e656b;
+		margin-bottom: 8px;
+	}
+	.card-signature {
+		padding: 4px 0 4px 10px;
+		font-style: italic;
+	}
+	.card-code {
+		float: right;
+		margin-right: 10px;
+		color: #78d216;
+		background-color: #FFF;
+		padding: 4px 8px;
+	}
+	.card-caption {
+		padding: 10px;
+	}
+	.card-circle {
+		width: 56px;
+		height: 56px;
+		border: 1px solid #F00;
+		border-radius: 50%;
+		position: absolute;
+		top: 38px;
+		right: 0;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="card">
+		<div class="card-barcode"></div>
+		<div class="card-code">123</div>
+		<div class="card-signature">Signature and digits from card</div>
+		<div class="card-caption">On most cards, the 3-digit security code is on the back, to the right of the signature.</div>
+		<div class="card-circle"></div>
+	</div>
+</body>
+</html>

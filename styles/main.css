@@ -1,0 +1,40 @@
+body {
+    font: 13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #F5F8F9;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #08F;
+}
+
+a:focus {
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+button {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+fieldset {
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	margin: 0;
+	padding: 16px;
+}
+legend {
+	padding: 0 10px;
+}

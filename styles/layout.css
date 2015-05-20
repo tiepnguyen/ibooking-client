@@ -1,0 +1,437 @@
+/**
+ * Header
+ */
+
+.master-header {
+    height: 240px;
+    background-color: #F2F2F2;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 140px;
+}
+
+.master-header .container {
+    height: 100%;
+}
+
+.master-headline {
+    position: absolute;
+    left: 0;
+    bottom: -120px;
+    right: 0;
+}
+
+.master-logo {
+    display: block;
+    float: left;
+    width: 180px;
+    height: 180px;
+    background-color: #FFF;
+    background-position: center;
+    background-size: 100%;
+    border: 1px solid #DDD;
+}
+
+.master-caption {
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.master-caption h1 {
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2.25em;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0 0 .25em;
+}
+/**
+ * Body
+ */
+
+.body-banner {
+    margin-bottom: 20px;
+}
+
+.body-banner img {
+    width: 100%;
+}
+/**
+ * Aside
+ */
+
+.body-aside {
+    width: 280px;
+    float: left;
+}
+
+.container-box {
+    background-color: #FFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .25);
+}
+
+.box-title {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DDD;
+}
+
+.dual-split {
+    width: 50%;
+    float: left;
+}
+
+.dual-split:first-child label {
+    margin-right: 10px;
+}
+
+.dual-split:last-child label {
+    margin-left: 10px;
+}
+
+.booking-search-form td {
+    padding: 6px 0;
+}
+
+.booking-search-form label {
+    display: block;
+}
+
+.booking-search-form input[type=text] {
+    font-size: 1.2em;
+}
+
+.datepicker-label {
+    position: relative;
+}
+
+.datepicker-label::before {
+    content: "\f133";
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.form-label-title {
+    font-weight: normal;
+    margin: 0 0 .25em;
+}
+
+.booking-search-form button {
+    width: 100%;
+}
+
+.booking-search-form .ui-buttonset .ui-button {
+    width: 50%;
+}
+
+.booking-search-form .ui-button-text-only .ui-button-text {
+    padding: .85em 0;
+}
+
+.booking-search-form a.ui-spinner-button {
+    width: 36px;
+    height: 38px;
+    cursor: pointer;
+    line-height: 38px;
+    font-family: inherit;
+    background: #F5F5F5;
+    border-left: 1px solid #E5E5E5;
+}
+
+.booking-search-form .ui-spinner-up {
+    right: 36px;
+}
+
+.booking-search-form .ui-spinner-down {
+    bottom: -2px;
+}
+
+.booking-search-form .ui-spinner-up::before {
+    content: "+";
+}
+
+.booking-search-form .ui-spinner-down::before {
+    content: "-";
+}
+
+.booking-search-form td .ui-spinner {
+    width: 100%;
+}
+
+.filter-component {
+    padding-top: 20px;
+}
+
+.component-title {
+    font-weight: normal;
+    font-size: 1.25em;
+    cursor: pointer;
+    margin: 0;
+    margin-left: 4px;
+}
+
+.component-title::before {
+    font-family: FontAwesome;
+    content: "\f105";
+    margin-right: 14px;
+    font-size: 1.2em;
+    line-height: 24px;
+    display: block;
+    float: left;
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+}
+
+.component-title.active::before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.price-filter-label {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 30px;
+}
+
+.price-filter-label li {
+    float: left;
+}
+
+.price-filter-label li:last-child {
+    float: right;
+}
+
+.price-filter .slider {
+    margin: 0 10px;
+}
+
+.room-filter label {
+    display: block;
+    margin: 10px 0;
+}
+
+.room-filter input {
+    margin-right: 6px;
+    font-size: 1.25em;
+}
+/**
+ * Main Body
+ */
+
+.body-main {
+    margin-left: 310px;
+    padding-bottom: 20px;
+}
+
+.room-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.room-item {
+    display: block;
+    position: relative;
+}
+
+.room-item.container-box {
+    /*padding: 20px;*/
+    
+    padding: 0;
+    min-height: 150px;
+}
+
+.room-photo-frame {
+    position: relative;
+    overflow: hidden;
+    width: 240px;
+    height: 0;
+    padding-bottom: 150px;
+    float: left;
+    margin: 16px;
+}
+
+.room-photo-frame img {
+    width: 100%;
+}
+
+.photo-zoom-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .25);
+    color: #FFF;
+    font-size: 3em;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+}
+
+.room-photo-frame:hover .photo-zoom-button {
+    opacity: 1;
+}
+
+.room-text {
+    min-height: 150px;
+    padding: 16px;
+}
+
+.room-name {
+    font-weight: normal;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.rate-list {
+    margin: 0;
+    padding: 0 0 1px;
+    /*padding: 0 16px 16px;*/
+    
+    list-style: none;
+}
+
+.rate-item {
+    background-color: #F8F8F8;
+    margin: 1px 1px 0;
+    border-bottom: 1px solid #EEE;
+}
+.rate-item:last-child {
+	border-bottom: none;
+}
+
+.rate-name:hover {
+    color: #3498db;
+}
+
+.rate-name {
+    font-size: 1.125em;
+    font-weight: normal;
+    line-height: 1;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+.rate-name .fa-angle-right {
+    font-size: 1.25em;
+    margin-right: 6px;
+    -webkit-transition: .400s;
+    -o-transition: .400s;
+    transition: .400s;
+}
+.rate-item.active .fa-angle-right {
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.rate-price {
+    float: right;
+    font-size: 1.125em;
+}
+
+.rate-item-content {
+	padding: 0 16px 16px;
+	display: none;
+}
+.rate-item-text {
+	margin-right: 160px;
+}
+
+.rate-item-text ul {
+	list-style: inside;
+	padding-left: 10px;
+}
+.rate-item-action {
+	width: 160px;
+	float: right;
+	text-align: right;
+}
+.rate-action-caption {
+	font-size: 0.9em;
+}
+.rate-item-action button {
+	padding: 4px 20px;
+	margin-top: 10px;
+}
+.rate-tnc-dialog {
+	padding: 20px;
+}
+
+/**
+ * Booking Form
+ */
+.booking-inform-form label {
+    position: relative;
+}
+.booking-inform-form .form-table .fa {
+    float: right;
+    margin-top: 4px;
+    display: none;
+}
+.booking-inform-form .valid .input-lable {
+    color: #090;
+}
+.booking-inform-form .valid .fa-check {
+    display: inline;
+}
+.booking-inform-form .invalid .input-lable {
+    color: #D00;
+}
+.booking-inform-form .invalid .fa-remove {
+    display: inline;
+}
+
+.booking-inform-form label.identified .fa {
+    position: absolute;
+    top: 17px;
+    right: 5px;
+    font-size: 2em;
+}
+.booking-inform-form label.visa .fa-cc-visa {
+    display: block;
+}
+.booking-inform-form label.mastercard .fa-cc-mastercard {
+    display: block;
+}
+.booking-inform-form label.amex .fa-cc-amex {
+    display: block;
+}
+.booking-inform-form label.discover .fa-cc-discover {
+    display: block;
+}
+
+/**
+ * Footer
+ */
+
+.master-footer {
+    background-color: #444;
+    color: #DDD;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.master-footer h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.25em;
+}
