@@ -16,7 +16,9 @@
     <header class="master-header" style="background-image: url(images/rex-banner-2200x1200.jpg)">
         <div class="container">
             <section class="master-headline">
-                <a href="#" class="master-logo" style="background-image: url(images/logo-rex.png)"></a>
+                <a href="#" class="master-logo">
+                    <img src="images/logo-rex.png" alt="">
+                </a>
                 <div class="master-caption">
                     <h1>Rex Hotel Saigon</h1>
                     <address>
@@ -147,10 +149,13 @@
                     <br>
                     <hr>
                     <br>
-                    <button onclick="window.print()"><i class="fa fa-print"></i> Print This Page</button>
-                    <button onclick="location.href='$_BASE/do=search'" style="float: right;">Make Another Booking</button>
+                    <div class="booking-additional-actions">
+                        <button onclick="window.print()"><i class="fa fa-print"></i> Print This Page</button>
+                        <button onclick="location.href='$_BASE/do=search'" style="float: right;">Make Another Booking</button>
+                    </div>
                 </div>
                 <!-- Additional styles -->
+                <link rel="stylesheet" type="text/css" href="styles/print.css">
                 <style type="text/css">
                 .body-main {
                     margin-left: 0;

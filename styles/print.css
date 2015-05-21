@@ -1,0 +1,12 @@
+@media print {
+    /*.master-header,*/
+    
+    .master-footer,
+    .body-banner,
+    .booking-additional-actions {
+        display: none;
+    }
+    .master-header {
+        height: 80px;
+    }
+}
