@@ -48,6 +48,12 @@ jQuery(function($) {
         }
     });
 
+    $('.time-input-txt').timeEntry({
+        ampmPrefix: ' ',
+        spinnerImage: '',
+        defaultTime: new Date(0, 0, 0, 0, 0, 0)
+    });
+
     if ((paymentForm = $('#payment-form')).length) {
         paymentForm.find('#card-number')
             .payment('formatCardNumber')
@@ -64,8 +70,9 @@ jQuery(function($) {
         paymentForm.find('#card-expiry')
             .payment('formatCardExpiry')
             .on('blur', function() {
-                var expiry = $(this).val().split(' / ');$('#card-expiry-month').val(expiry[0]);
-$('#card-expiry-year').val(expiry[1]);
+                var expiry = $(this).val().split(' / ');
+                $('#card-expiry-month').val(expiry[0]);
+                $('#card-expiry-year').val(expiry[1]);
 
                 $(this).setValidLabel($.payment.validateCardExpiry(expiry[0], expiry[1]));
             });
