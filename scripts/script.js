@@ -10,7 +10,7 @@ jQuery(function($) {
     var datepicker = $('.datepicker');
     datepicker.each(function() {
         var $this = $(this);
-        var start_date_value, end_date_value;
+        // var start_date_value, end_date_value;
         $this.datepicker({
             minDate: '0',
             dateFormat: 'DD, dd M yy',
@@ -18,9 +18,12 @@ jQuery(function($) {
             altFormat: 'yy-mm-dd',
             onClose: function(selectedDate, obj) {
                 if ($this.is('#arrival')) {
-                    $('#departure').datepicker('option', 'minDate', selectedDate).focus();
+                    $('#departure').datepicker('option', {
+                        'minDate': selectedDate
+                    }).focus();
                 }
             },
+            /*
             beforeShowDay: function(selectedDate) {
                 if (selectedDate >= start_date_value && selectedDate <= end_date_value) {
                     return [true, 'ui-datepicker-highlight'];
@@ -45,6 +48,7 @@ jQuery(function($) {
                     datepicker.filter('.end').datepicker('setDate', the_date).datepicker('refresh');
                 }
             }
+            */
         });
     });
 
