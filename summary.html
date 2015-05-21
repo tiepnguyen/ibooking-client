@@ -75,25 +75,82 @@
 			</aside>
 			-->
             <main class="body-main">
-				<div class="container-box">
-					<h3 class="box-title">
+                <div class="container-box">
+                    <h3 class="box-title">
 						Reservation Summary
 					</h3>
-					<div class="box-content">
-						<table class="data-table stripe">
-							<tr>
-								<td>Guest Name</td>
-								<td>Edward Cullen Jr.</td>
-							</tr>
-							<tr>
-								<td>Confirmation #</td>
-								<td>#1234</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-
-				<!-- Additional styles -->
+                    <div class="box-content">
+                        <div class="booking-summary">
+                            <table class="data-table stripe">
+                                <tr>
+                                    <td>Confirmation #</td>
+                                    <td><strong>GHS/IBE/23579</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Guest Name</td>
+                                    <td>Edward Cullen Jr.</td>
+                                </tr>
+                                <tr>
+                                    <td>Arrival</td>
+                                    <td>Monday, 30 July 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>Departure</td>
+                                    <td>Thursday, 01 August 2015</td>
+                                </tr>
+                                <tr>
+                                    <td>Nights</td>
+                                    <td>02</td>
+                                </tr>
+                                <tr>
+                                    <td>Persons</td>
+                                    <td>02</td>
+                                </tr>
+                            </table>
+                            <table class="data-table stripe">
+                                <tr>
+                                    <td>Room Type</td>
+                                    <td><strong>Premium Delux</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Rate</td>
+                                    <td>Best Available Rate</td>
+                                </tr>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>USD 250</td>
+                                </tr>
+                                <tr>
+                                    <td>VAT</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Service Charge</td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td><strong>USD 275.00</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="rate-include-text">
+                            Room Rate includes:
+                            <br> - Daily buffet breakfast
+                            <br> - Complimentary in-room tea & coffee, 02 bottles of mineral water per room/day
+                            <br> - Free wireless internet access
+                            <br> - Free usage of gymnasium, sauna and swimming pool
+                            <br> - Complimentary daily newspapers, local call, welcome fruit basket, and flower
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <button onclick="window.print()"><i class="fa fa-print"></i> Print This Page</button>
+                    <button onclick="location.href='$_BASE/do=search'" style="float: right;">Make Another Booking</button>
+                </div>
+                <!-- Additional styles -->
                 <style type="text/css">
                 .body-main {
                     margin-left: 0;

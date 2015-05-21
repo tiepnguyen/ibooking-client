@@ -17,24 +17,33 @@ a:focus {
     outline: none;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
 }
 
 button {
-	outline: none;
+    outline: none;
 }
 
 textarea {
-	resize: none;
+    resize: none;
 }
 
 fieldset {
-	border: 1px solid #DDD;
-	border-radius: 4px;
-	margin: 0;
-	padding: 16px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    margin: 0;
+    padding: 16px;
 }
+
 legend {
-	padding: 0 10px;
+    padding: 0 10px;
+}
+
+hr {
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #DDD;
 }
