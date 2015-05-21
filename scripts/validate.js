@@ -6,7 +6,6 @@ jQuery(function($) {
 
             $.each(options.fields, function(index, val) {
                 $this.find(index).on('blur', function() {
-                    console.log($(this).val());
                     $(this).setValidLabel(val.test($(this).val()));
                 });
             });
@@ -32,8 +31,10 @@ jQuery(function($) {
             '.validate-select': /.+/
         },
         submit: function(e, params) {
-            console.log(params);
-            var invalid = $(this).find('[required]:not(.valid)').first();
+            var form = $(this);
+            form.find('[required]').trigger('blur');
+
+            var invalid = form.find('[required]:not(.valid)').first();
             console.log(invalid);
             if (invalid.length) {
                 e.preventDefault();
