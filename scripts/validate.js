@@ -6,7 +6,7 @@ jQuery(function($) {
 
             $.each(options.fields, function(index, val) {
                 $this.find(index).on('blur', function() {
-                	console.log($(this).val());
+                    console.log($(this).val());
                     $(this).setValidLabel(val.test($(this).val()));
                 });
             });
@@ -36,10 +36,10 @@ jQuery(function($) {
             var invalid = $(this).find('[required]:not(.valid)').first();
             console.log(invalid);
             if (invalid.length) {
-            	e.preventDefault();
+                e.preventDefault();
                 invalid.focus();
             } else if ($('#tnc-agree-checkbox').prop('checked') === false) {
-            	e.preventDefault();
+                e.preventDefault();
                 $('#tnc-dialog-button').click();
             } else {
                 console.log('submit');
