@@ -64,7 +64,9 @@ jQuery(function($) {
         paymentForm.find('#card-expiry')
             .payment('formatCardExpiry')
             .on('blur', function() {
-                var expiry = $(this).val().split(' / ');
+                var expiry = $(this).val().split(' / ');$('#card-expiry-month').val(expiry[0]);
+$('#card-expiry-year').val(expiry[1]);
+
                 $(this).setValidLabel($.payment.validateCardExpiry(expiry[0], expiry[1]));
             });
         paymentForm.find('#card-cvv')
