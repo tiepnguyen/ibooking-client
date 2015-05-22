@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Reservation - Modern Hotel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="styles/style.css">
+	<script src="scripts/jquery-1.11.2.min.js"></script>
+	<script src="scripts/jquery-ui-1.11.4.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<header class="master-header" style="background-image: url(images/rex-banner-2200x1200.jpg)">
+		<div class="container">
+			<section class="master-headline">
+				<a href="#" class="master-logo">
+					<img src="images/logo-rex.png" alt="">
+				</a>
+				<div class="master-caption">
+					<h1>Rex Hotel Saigon</h1>
+					<address>
+						141 Nguyen Hue Blvd, Ho Chi Minh City, Vietnam
+					</address>
+				</div>
+			</section>
+		</div>
+	</header>
+	<section class="master-body">
+		<div class="container">
+			<div class="body-banner">
+				<img src="images/book-direct-banner.png" alt="">
+			</div>
+			<div class="container-box text-center member-connect-bar">
+				Rex Preferred Guest Member? <a href="?do=connect" class="ghost-button"><i class="fa fa-unlock-alt"></i> Sign In For Member Rates</a>
+				<!-- Welcome back, Edward. Enjoy your <strong>35% Off</strong> for Platinum Membership -->
+			</div>
+			<div class="breadcrumb-nav">
+				<ul>
+					<li class="active">Select Dates</li>
+					<li>Room &amp; Rate</li>
+					<li>Checkout</li>
+					<li>Review</li>
+					<li>Confirmation</li>
+				</ul>
+			</div>
+			<aside class="body-aside">
+				<div class="container-box">
+					<h3 class="box-title">Your Stay</h3>
+					<div class="box-content">
+						<form action="index.html" class="booking-search-form" id="booking-search-form">
+							<table class="form-table wide">
+								<tr>
+									<td>
+										<h4 class="form-label-title">Arrival</h4>
+										<label class="datepicker-label">
+											<input type="text" class="datepicker" id="arrival" placeholder="Arrival" value="Friday, 29 May 2015" readonly>
+											<input type="text" name="arrival" class="hide datepicker-alt" placeholder="Arrival" value="">
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h4 class="form-label-title">Departure</h4>
+										<label class="datepicker-label">
+											<input type="text" class="datepicker" id="departure" placeholder="Departure" value="Saturday, 30 May 2015" readonly>
+											<input type="text" name="departure" class="hide datepicker-alt" placeholder="Arrival" value="">
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="dual-split">
+											<label>
+												<h4 class="form-label-title">Rooms</h4>
+												<input type="text" class="spinner" name="rooms" value="1" min="1" max="4" readonly>
+											</label>
+										</div>
+										<div class="dual-split">
+											<label>
+												<h4 class="form-label-title">Persons</h4>
+												<input type="text" class="spinner" name="persons" value="1" min="1" max="4" readonly>
+											</label>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+			</aside>
+			<main class="body-main">
+				<!-- <div class="container-box"> -->
+				<div class="master-datepicker" id="master-datepicker"></div>
+				<input type="hidden" id="from_date" value="2015-05-22">
+				<input type="hidden" id="to_date" value="2015-05-23">
+				<input type="hidden" id="current_setting" value="from">
+				<br>
+				<div class="text-right">
+					<button type="submit" id="alt_submit_button"><i class="fa fa-search"></i> Check Availability</button>
+				</div>
+				<link rel="stylesheet" type="text/css" href="styles/home.css">
+				<script type="text/javascript" src="scripts/home.js"></script>
+				<!-- </div> -->
+			</main>
+		</div>
+		<div class="clear"></div>
+	</section>
+	<footer class="master-footer">
+		<div class="container">
+			<h3>Rex Hotel Saigon</h3>
+			<address>141 Nguyen Hue Blvd, Ho Chi Minh City, Vietnam</address>
+			<div>
+				Phone: <a href="tel:(8 48)38292185">(8 48)38292185</a> | E-mail: <a href="mailto:rexhotel@rex.com.vn">rexhotel@rex.com.vn</a>
+			</div>
+		</div>
+	</footer>
+	<script src="scripts/script.js"></script>
+	<!-- end of document -->
+</body>
+
+</html>
