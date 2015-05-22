@@ -3,27 +3,53 @@
 	margin: auto;
 	position: relative;
 }
+
 .wide {
 	width: 100%;
 }
+
 .hide {
 	display: none;
 }
+
 .clear {
 	clear: both;
 }
+
 .text-right {
 	text-align: right;
 }
+
+.text-center {
+	text-align: center;
+}
+
+.ghost-button {
+	border: 1px solid #09F;
+	color: #09F;
+	border-radius: 4px;
+	padding: 10px;
+	-webkit-transition: .25s;
+	-o-transition: .25s;
+	transition: .25s;
+}
+
+.ghost-button:hover {
+	color: #FFF;
+	background-color: #09F;
+}
+
 .form-table td {
 	padding: 6px;
 }
+
 .form-table input[type=text],
 .form-table select,
 .form-table textarea {
 	width: 100%;
 	box-sizing: border-box;
 }
+
 .clearfix::after {
 	content: " ";
 	visibility: hidden;
@@ -36,6 +62,7 @@
 	background: #FFF;
 	box-shadow: 0 0 1px rgba(0, 0, 0, .2);
 }
+
 .data-table input[type=text] {
 	width: 100%;
 	box-sizing: border-box;
@@ -63,6 +90,7 @@ table.stripe tr:nth-child(even) td {
 table.line td {
 	border-bottom: 1px solid #F1F1F1;
 }
+
 table.line tr:last-child td {
 	border-bottom: none;
 }
