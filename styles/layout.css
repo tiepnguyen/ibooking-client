@@ -32,6 +32,12 @@
     border: 1px solid #DDD;
 }
 
+.master-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .master-caption {
     margin-left: 200px;
     margin-top: 80px;
@@ -54,6 +60,66 @@
 
 .body-banner img {
     width: 100%;
+}
+
+.member-connect-bar {
+    font-size: 1.1em;
+}
+
+.breadcrumb-nav {
+    margin-bottom: 20px;
+    height: 35px;
+}
+
+.breadcrumb-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb-nav li {
+    display: inline-block;
+    padding: 8px 16px 8px 24px;
+    background-color: #DDD;
+    position: relative;
+    float: left;
+    margin-right: 5px;
+}
+
+.breadcrumb-nav li::before,
+.breadcrumb-nav li::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border: 18px solid transparent;
+    border-left-width: 10px;
+}
+
+.breadcrumb-nav li::before {
+    left: 0;
+    border-left-color: #F5F8F9;
+}
+
+.breadcrumb-nav li::after {
+    right: -28px;
+    border-left-color: #DDD;
+    z-index: 1;
+}
+
+.breadcrumb-nav li:first-child::before {
+    display: none;
+}
+
+.breadcrumb-nav li.active {
+    background-color: #09F;
+    color: #FFF;
+}
+
+.breadcrumb-nav li.active::after {
+    border-left-color: #09F;
 }
 /**
  * Aside
@@ -311,8 +377,9 @@
     margin: 1px 1px 0;
     border-bottom: 1px solid #EEE;
 }
+
 .rate-item:last-child {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 .rate-name:hover {
@@ -335,11 +402,12 @@
     -o-transition: .400s;
     transition: .400s;
 }
+
 .rate-item.active .fa-angle-right {
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .rate-price {
@@ -348,53 +416,63 @@
 }
 
 .rate-item-content {
-	padding: 0 16px 16px;
-	display: none;
+    padding: 0 16px 16px;
+    display: none;
 }
+
 .rate-item-text {
-	margin-right: 160px;
+    margin-right: 160px;
 }
 
 .rate-item-text ul {
-	list-style: inside;
-	padding-left: 10px;
-}
-.rate-item-action {
-	width: 160px;
-	float: right;
-	text-align: right;
-}
-.rate-action-caption {
-	font-size: 0.9em;
-}
-.rate-item-action button {
-	padding: 4px 20px;
-	margin-top: 10px;
-}
-.rate-tnc-dialog {
-	padding: 20px;
+    list-style: inside;
+    padding-left: 10px;
 }
 
+.rate-item-action {
+    width: 160px;
+    float: right;
+    text-align: right;
+}
+
+.rate-action-caption {
+    font-size: 0.9em;
+}
+
+.rate-item-action button {
+    padding: 4px 20px;
+    margin-top: 10px;
+}
+
+.rate-tnc-dialog {
+    padding: 20px;
+}
 /**
  * Booking Form
  */
+
 .booking-inform-form label {
     position: relative;
 }
+
 .booking-inform-form .form-table .fa {
     float: right;
     margin-top: 4px;
     display: none;
 }
+
 .booking-inform-form .valid .input-lable {
     color: #090;
 }
+
 .booking-inform-form .valid .fa-check {
     display: inline;
 }
+
 .booking-inform-form .invalid .input-lable {
     color: #D00;
 }
+
 .booking-inform-form .invalid .fa-remove {
     display: inline;
 }
@@ -405,19 +483,39 @@
     right: 5px;
     font-size: 2em;
 }
+
 .booking-inform-form label.visa .fa-cc-visa {
     display: block;
 }
+
 .booking-inform-form label.mastercard .fa-cc-mastercard {
     display: block;
 }
+
 .booking-inform-form label.amex .fa-cc-amex {
     display: block;
 }
+
 .booking-inform-form label.discover .fa-cc-discover {
     display: block;
 }
 
+.booking-summary table {
+    width: 50%;
+    float: left;
+    border: 10px solid #FFF;
+}
+
+.booking-summary strong {
+    font-weight: normal;
+    font-size: 1.25em;
+}
+
+.rate-include-text {
+    font-size: 0.9em;
+    margin-top: 1em;
+    padding: 10px;
+}
 /**
  * Footer
  */

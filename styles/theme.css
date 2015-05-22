@@ -456,3 +456,7 @@
 	filter: Alpha(Opacity=30); /* support: IE8 */
 	border-radius: 8px;
 }
+.ui-datepicker-highlight .ui-state-default {
+	background: #0099ff;
+	color: #fff;
+}
