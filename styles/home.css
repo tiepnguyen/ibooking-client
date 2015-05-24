@@ -1,6 +1,6 @@
 .master-datepicker .ui-datepicker-inline[style] {
 	width: 100% !important;
-	padding-bottom: 28px;
+	padding-bottom: 32px;
 }
 
 .master-datepicker .ui-helper-clearfix::after,
@@ -12,22 +12,31 @@
 	margin: 0;
 }
 
-.master-datepicker .ui-datepicker td span,
-.master-datepicker .ui-datepicker td a {
-	padding: 12px 4px;
+.master-datepicker .ui-datepicker-calendar td {
+	position: relative;
 }
 
-.master-datepicker .ui-state-default i {
+.master-datepicker .ui-datepicker-calendar td::after {
+	content: attr(title);
 	display: block;
 	font-size: .9em;
 	color: #09F;
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+}
+
+.master-datepicker .ui-ibooking-highlight::after,
+.master-datepicker .ui-datepicker-current-day::after {
+	color: #FFF !important;
+}
+
+.master-datepicker .ui-datepicker td span,
+.master-datepicker .ui-datepicker td a {
+	padding: 10px 4px 20px;
 }
 
 .ui-ibooking-highlight a {
 	background: #419bf9 linear-gradient(to bottom, rgba(65, 155, 249, 1) 0%, rgba(26, 130, 251, 1) 100%) !important;
 	color: #FFF !important;
-}
-
-.master-datepicker .ui-ibooking-highlight i {
-	color: #FFF;
 }
