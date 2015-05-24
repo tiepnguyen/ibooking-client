@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-    function checkUnavailable(date, unavailableDates) {
+    function checkAvailable(date, availableDates) {
         // break the selected date to month, year and day to prepare MySQL format
         var m = date.getMonth(),
             d = date.getDate(),
@@ -12,13 +12,35 @@ jQuery(function($) {
         if (m.length < 2) m = '0' + m;
         d = d.toString();
         if (d.length < 2) d = '0' + d;
+        var dateString = y + '-' + m + '-' + d;
+        var label = '';
+        var rate = '';
         // now go through the array to see if the date is in the array of unavailable dates or not
-        for (i = 0, n = unavailableDates.length; i < n; i++) {
-            if (jQuery.inArray(y + '-' + m + '-' + d, unavailableDates) != -1) {
-                return [false];
+        for (var i in availableDates) {
+            if (dateString == i) {
+                if (availableDates[i] === '') {
+                    return [false];
+                } else {
+                    label = 'ui-ibooking-rate';
+                    rate = availableDates[i];
+                }
             }
         }
-        return [true];
+
+        // if the date is not unavailable, let's see do we need to color it
+        var fromDate = $('#from_date').val();
+        var toDate = $('#to_date').val();
+        var fromParts = fromDate.split('-');
+        fromDate = new Date(fromParts[0], fromParts[1] - 1, fromParts[2]);
+        var toParts = toDate.split('-');
+        toDate = new Date(toParts[0], toParts[1] - 1, toParts[2]);
+
+        if (date.valueOf() >= fromDate.valueOf() && date.valueOf() <= toDate.valueOf()) {
+            // return true with highlighted class
+            label = 'ui-ibooking-highlight';
+        }
+
+        return [true, label, rate];
     }
 
     function selectDate(date) {
@@ -61,6 +83,44 @@ jQuery(function($) {
         current.val(currentlySetting);
     }
 
+    var availableDates = {
+        '2015-06-01': '$150',
+        '2015-06-02': '$150',
+        '2015-06-03': '$150',
+        '2015-06-04': '$150',
+        '2015-06-05': '$150',
+        '2015-06-06': '$150',
+        '2015-06-07': '$150',
+        '2015-06-08': '$150',
+        '2015-06-09': '$150',
+        '2015-06-10': '$150',
+        '2015-06-11': '$150',
+        '2015-06-12': '$150',
+        '2015-06-13': '$150',
+        '2015-06-14': '$150',
+        '2015-06-15': '$150',
+        '2015-06-16': '$150',
+        '2015-06-17': '$150',
+        '2015-06-18': '$150',
+        '2015-06-19': '$150',
+        '2015-06-20': '$150',
+        '2015-06-21': '$150',
+        '2015-06-22': '',
+        '2015-06-23': '',
+        '2015-06-24': '',
+        '2015-06-25': '$150',
+        '2015-06-26': '$250',
+        '2015-06-27': '$250',
+        '2015-06-28': '$250',
+        '2015-06-29': '$250',
+        '2015-06-30': '$250',
+    };
+
+    function updateRateToDate() {
+
+        // $('#master-datepicker').datepicker('refresh');
+    }
+
     /**
      * Inline datepicker for home page
      */
@@ -70,38 +130,11 @@ jQuery(function($) {
         maxDate: '+1y',
         minDate: '0',
         appendText: 'test',
+        onSelect: selectDate,
         beforeShowDay: function(date) {
-            var unavailableDates = ['2015-06-23', '2015-06-24', '2015-06-25'];
-            var result = checkUnavailable(date, unavailableDates); // here we pass the comparison to another function
-            if (!result[0]) return result; // don't check further the unavailable dates
-
-            // if the date is not unavailable, let's see do we need to color it
-            var fromDate = $('#from_date').val();
-            var toDate = $('#to_date').val();
-            var fromParts = fromDate.split('-');
-            fromDate = new Date(fromParts[0], fromParts[1] - 1, fromParts[2]);
-            var toParts = toDate.split('-');
-            toDate = new Date(toParts[0], toParts[1] - 1, toParts[2]);
-
-            if (date.valueOf() >= fromDate.valueOf() && date.valueOf() <= toDate.valueOf()) {
-                // return true with highlighted class
-                return [true, 'ui-ibooking-highlight', null];
-            }
-
-            return [true];
+            return checkAvailable(date, availableDates);
         },
-        onSelect: selectDate
-    });
-
-
-    $('#master-datepicker').find('.ui-datepicker-calendar .ui-state-default').each(function(index, el) {
-        var $this = $(this);
-        var date = $this.text();
-        var parent = $this.closest('td');
-        if (!parent.hasClass('ui-state-disabled')) {
-            console.log(parent.data('year'), parent.data('month'), date);
-            $this.append('<i>$250</i>');
-        }
+        onChangeMonthYear: updateRateToDate
     });
 
 

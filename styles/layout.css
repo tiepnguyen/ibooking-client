@@ -422,6 +422,7 @@
 
 .rate-item-text {
     margin-right: 160px;
+    min-height: 80px;
 }
 
 .rate-item-text ul {
