@@ -1,6 +1,39 @@
 jQuery(function($) {
 
-    function checkAvailable(date, availableDates) {
+    var availableDates = {
+        '2015-06-01': '$150',
+        '2015-06-02': '$150',
+        '2015-06-03': '$150',
+        '2015-06-04': '$150',
+        '2015-06-05': '$150',
+        '2015-06-06': '$150',
+        '2015-06-07': '$150',
+        '2015-06-08': '$150',
+        '2015-06-09': '$150',
+        '2015-06-10': '$150',
+        '2015-06-11': '$150',
+        '2015-06-12': '$150',
+        '2015-06-13': '$150',
+        '2015-06-14': '$150',
+        '2015-06-15': '$150',
+        '2015-06-16': '$150',
+        '2015-06-17': '$150',
+        '2015-06-18': '$150',
+        '2015-06-19': '$150',
+        '2015-06-20': '$150',
+        '2015-06-21': '$150',
+        '2015-06-22': '',
+        '2015-06-23': '',
+        '2015-06-24': '',
+        '2015-06-25': '$150',
+        '2015-06-26': '$250',
+        '2015-06-27': '$250',
+        '2015-06-28': '$250',
+        '2015-06-29': '$250',
+        '2015-06-30': '$250',
+    };
+
+    function checkAvailable(date) {
         // break the selected date to month, year and day to prepare MySQL format
         var m = date.getMonth(),
             d = date.getDate(),
@@ -67,58 +100,31 @@ jQuery(function($) {
         // are we setting from or to? This is the third hidden field
         // we use it to store what we are currently setting. It should be populated with "from" by default
         var currentlySetting = current.val();
+        var currentDay = new Date(selParts[0], selParts[1] - 1, selParts[2]);
+        var nextDay = new Date(currentDay.valueOf() + 86400000);
 
         // figure out where to set (hidden field)
         if (currentlySetting == 'from' || selDate < fromDate) {
             // selDate is "from"
             from.val(selParts[0] + '-' + selParts[1] + '-' + selParts[2]);
-            $('#arrival').datepicker('setDate', new Date(selParts[0], selParts[1] - 1, selParts[2]));
+            to.val(nextDay.getFullYear() + '-' + (nextDay.getMonth() + 1) + '-' + nextDay.getDate());
+            $('#arrival').datepicker('setDate', currentDay);
+            $('#departure')
+                .datepicker('setDate', nextDay)
+                .datepicker('option', 'minDate', currentDay);
         } else {
             // selDate is "to"
             to.val(selParts[0] + '-' + selParts[1] + '-' + selParts[2]);
-            $('#departure').datepicker('setDate', new Date(selParts[0], selParts[1] - 1, selParts[2]));
+            $('#departure').datepicker('setDate', nextDay);
         }
 
         currentlySetting = (currentlySetting == 'from') ? 'to' : 'from';
         current.val(currentlySetting);
     }
 
-    var availableDates = {
-        '2015-06-01': '$150',
-        '2015-06-02': '$150',
-        '2015-06-03': '$150',
-        '2015-06-04': '$150',
-        '2015-06-05': '$150',
-        '2015-06-06': '$150',
-        '2015-06-07': '$150',
-        '2015-06-08': '$150',
-        '2015-06-09': '$150',
-        '2015-06-10': '$150',
-        '2015-06-11': '$150',
-        '2015-06-12': '$150',
-        '2015-06-13': '$150',
-        '2015-06-14': '$150',
-        '2015-06-15': '$150',
-        '2015-06-16': '$150',
-        '2015-06-17': '$150',
-        '2015-06-18': '$150',
-        '2015-06-19': '$150',
-        '2015-06-20': '$150',
-        '2015-06-21': '$150',
-        '2015-06-22': '',
-        '2015-06-23': '',
-        '2015-06-24': '',
-        '2015-06-25': '$150',
-        '2015-06-26': '$250',
-        '2015-06-27': '$250',
-        '2015-06-28': '$250',
-        '2015-06-29': '$250',
-        '2015-06-30': '$250',
-    };
-
-    function updateRateToDate() {
-
-        // $('#master-datepicker').datepicker('refresh');
+    function changeMonthyear(year, month) {
+        // Make ajax call here to get rate for requested year/month
+        console.log(year, month);
     }
 
     /**
@@ -127,14 +133,11 @@ jQuery(function($) {
     $('#master-datepicker').datepicker({
         dateFormat: 'yy-mm-dd',
         numberOfMonths: 2,
-        maxDate: '+1y',
         minDate: '0',
-        appendText: 'test',
+        maxDate: '+1y',
         onSelect: selectDate,
-        beforeShowDay: function(date) {
-            return checkAvailable(date, availableDates);
-        },
-        onChangeMonthYear: updateRateToDate
+        onChangeMonthYear: changeMonthyear,
+        beforeShowDay: checkAvailable
     });
 
 
