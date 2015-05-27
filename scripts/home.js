@@ -115,7 +115,7 @@ jQuery(function($) {
         } else {
             // selDate is "to"
             to.val(selParts[0] + '-' + selParts[1] + '-' + selParts[2]);
-            $('#departure').datepicker('setDate', nextDay);
+            $('#departure').datepicker('setDate', currentDay);
         }
 
         currentlySetting = (currentlySetting == 'from') ? 'to' : 'from';
