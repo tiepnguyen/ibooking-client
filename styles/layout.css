@@ -66,6 +66,13 @@
     font-size: 1.1em;
 }
 
+.member-connect-bar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
 .breadcrumb-nav {
     margin-bottom: 20px;
     height: 35px;
@@ -130,8 +137,8 @@
  */
 
 .body-aside {
-    width: 280px;
-    float: left;
+    /*width: 280px;*/
+    /*float: left;*/
 }
 
 .container-box {
@@ -155,15 +162,15 @@
 }
 
 .dual-split:first-child label {
-    margin-right: 10px;
+    margin-right: 6px;
 }
 
 .dual-split:last-child label {
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 .booking-search-form td {
-    padding: 6px 0;
+    /*padding: 6px 0;*/
 }
 
 .booking-search-form label {
@@ -172,6 +179,10 @@
 
 .booking-search-form input[type=text] {
     font-size: 1.2em;
+}
+
+.booking-search-form .datepicker {
+    min-width: 220px;
 }
 
 .datepicker-label {
@@ -299,7 +310,8 @@
  */
 
 .body-main {
-    margin-left: 310px;
+    /*margin-left: 310px;*/
+    
     padding-bottom: 20px;
 }
 

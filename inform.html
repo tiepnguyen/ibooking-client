@@ -5,31 +5,25 @@
     <meta charset="utf-8">
     <title>Reservation - Modern Hotel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <script src="scripts/jquery-1.11.2.min.js"></script>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/jquery-1.11.2.min.js"></script>
+    <script src="scripts/jquery-ui-1.11.4.min.js"></script>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <header class="master-header" style="background-image: url(images/rex-banner-2200x1200.jpg)">
-        <div class="container">
-            <section class="master-headline">
-                <a href="#" class="master-logo" style="background-image: url(images/logo-rex.png)"></a>
-                <div class="master-caption">
-                    <h1>Rex Hotel Saigon</h1>
-                    <address>
-                        141 Nguyen Hue Blvd, Ho Chi Minh City, Vietnam
-                    </address>
-                </div>
-            </section>
-        </div>
-    </header>
     <section class="master-body">
         <div class="container">
-            <div class="body-banner">
-                <img src="images/book-direct-banner.png" alt="">
+            <div class="breadcrumb-nav">
+                <ul>
+                    <li class="active">Select Dates</li>
+                    <li class="active">Room &amp; Rate</li>
+                    <li class="active">Checkout</li>
+                    <li>Review</li>
+                    <li>Confirmation</li>
+                </ul>
             </div>
             <aside class="body-aside">
                 <div class="container-box">
@@ -73,7 +67,7 @@
                 </div>
             </aside>
             <main class="body-main">
-                <form action="summary.html" class="booking-inform-form">
+                <form action="summary.html" class="booking-inform-form" id="booking-inform-form">
                     <div class="container-box">
                         <h3 class="box-title">Guest Information</h3>
                         <div class="box-content">
@@ -120,7 +114,7 @@
                                             <i class="fa fa-check"></i><i class="fa fa-remove"></i>
                                         </span>
                                         <label>
-                                            <input type="text" class="validate-email" placeholder="Email..." required>
+                                            <input type="text" name="inform[email]" class="validate-email" placeholder="Email..." required>
                                         </label>
                                     </td>
                                     <td>
@@ -140,7 +134,7 @@
                                             <i class="fa fa-check"></i><i class="fa fa-remove"></i>
                                         </span>
                                         <label>
-                                            <input type="text" class="validate-address" placeholder="Street Name..." required>
+                                            <input type="text" name="inform[address]" class="validate-address" placeholder="Street Name..." required>
                                         </label>
                                     </td>
                                     <td>
@@ -160,7 +154,7 @@
                                             <i class="fa fa-check"></i><i class="fa fa-remove"></i>
                                         </span>
                                         <label>
-                                            <input type="text" class="validate-name" placeholder="City..." required>
+                                            <input type="text" name="inform[city]" class="validate-name" placeholder="City..." required>
                                         </label>
                                     </td>
                                     <td>
@@ -168,7 +162,7 @@
                                             Country
                                             <i class="fa fa-check"></i><i class="fa fa-remove"></i>
                                         </span>
-                                        <select class="validate-select" required>
+                                        <select class="validate-select" name="inform[country]" required>
                                             <option value="">Select a country</option>
                                             <option value="VN">Vietnam</option>
                                         </select>
@@ -242,6 +236,7 @@
                             </table>
                         </div>
                     </div>
+                    <!--
                     <div class="container-box">
                         <h3 class="box-title">Payment</h3>
                         <div class="box-content" id="payment-form">
@@ -305,6 +300,7 @@
                             </table>
                         </div>
                     </div>
+                    -->
                     <div class="container-box">
                         <label>
                             <input type="checkbox" name="" id="tnc-agree-checkbox" style="margin-right: 4px;"> I have read and agreed with <a href="#dialog-tnc" id="tnc-dialog-button" class="dialog-button">Terms &amp; Conditions</a>
@@ -333,21 +329,22 @@
                 <script type="text/javascript" src="scripts/jquery.plugin.min.js"></script>
                 <script type="text/javascript" src="scripts/jquery.timeentry.min.js"></script>
                 <script type="text/javascript" src="scripts/validate.js"></script>
+                <style type="text/css">
+                .body-aside {
+                    width: 280px;
+                    float: left;
+                }
+                
+                .body-main {
+                    margin-left: 310px;
+                }
+                </style>
             </main>
         </div>
         <div class="clear"></div>
     </section>
-    <footer class="master-footer">
-        <div class="container">
-            <h3>Rex Hotel Saigon</h3>
-            <address>141 Nguyen Hue Blvd, Ho Chi Minh City, Vietnam</address>
-            <div>
-                Phone: <a href="tel:(8 48)38292185">(8 48)38292185</a> | E-mail: <a href="mailto:rexhotel@rex.com.vn">rexhotel@rex.com.vn</a>
-            </div>
-        </div>
-    </footer>
-    <script src="scripts/jquery-ui-1.11.4.min.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/facebook.js"></script>
 </body>
 
 </html>

@@ -17,8 +17,8 @@
 	<section class="master-body">
 		<div class="container">
 			<div class="container-box text-center member-connect-bar" id="member-connect-bar">
-				<!-- <img src="images/user.svg" id="member-profile-pic" alt=""> <span id="member-connect-text">Rex Preferred Guest Member? Connect to get special rates.</span> -->
-				<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/p120x120/1545027_10152159310381974_2058348071_n.jpg?oh=f5b5e54c6224d685615c6a68b1f741a2&oe=55F2F405&__gda__=1438741703_145e4885fb6ff9e78bc42f0b9593d224" id="member-profile-pic" alt=""> <span id="member-connect-text">Good morning, Tiep. Enjoy your <strong>35% Off</strong> for RPG Platium Membership</span>
+				<img src="images/user.svg" id="member-profile-pic" alt=""> <span id="member-connect-text">Rex Preferred Guest Member? Connect to get special rates.</span>
+				<!-- <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/p120x120/1545027_10152159310381974_2058348071_n.jpg?oh=f5b5e54c6224d685615c6a68b1f741a2&oe=55F2F405&__gda__=1438741703_145e4885fb6ff9e78bc42f0b9593d224" id="member-profile-pic" alt=""> <span id="member-connect-text">Good morning, Tiep. Enjoy your <strong>35% Off</strong> for RPG Platium Membership</span> -->
 			</div>
 			<div class="breadcrumb-nav">
 				<ul>
@@ -426,3 +426,19 @@
 </body>
 
 </html>
+<?php
+require __DIR__ . '/facebook-php-sdk-v4/autoload.php';
+
+Facebook\FacebookSession::setDefaultApplication('128552630568785', '4e9cb1af45a8cde9a0d5d294b1610ef0');
+$helper = new Facebook\FacebookJavaScriptLoginHelper();
+$session = $helper->getSession();
+
+if ($session) {
+    $me = (new Facebook\FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject()->asArray();
+    print_r($me);
+}
+
+$canvasHelper = new Facebook\FacebookCanvasLoginHelper();
+print_r($canvasHelper->getSignedRequest()->getPayload());
+
+?>
