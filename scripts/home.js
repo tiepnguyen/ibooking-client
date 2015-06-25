@@ -1,5 +1,6 @@
 jQuery(function($) {
 
+<<<<<<< HEAD
     var availableDates = {
         '2015-06-01': '$150',
         '2015-06-02': '$150',
@@ -32,6 +33,9 @@ jQuery(function($) {
         '2015-06-29': '$250',
         '2015-06-30': '$250',
     };
+=======
+    var availableDates = window.availableDates;
+>>>>>>> master
 
     function checkAvailable(date) {
         // break the selected date to month, year and day to prepare MySQL format
@@ -77,7 +81,6 @@ jQuery(function($) {
     }
 
     function selectDate(date) {
-        console.log(date);
         // is this date "from" or "to"?
         // the older date is always "from"
         var from = $('#from_date');
@@ -95,7 +98,7 @@ jQuery(function($) {
 
         // convert also the user selected to date object to compare
         var selParts = date.split('-');
-        var selDate = new Date(selParts[0], selParts[0] - 1, selParts[2]);
+        var selDate = new Date(selParts[0], selParts[1] - 1, selParts[2]);
 
         // are we setting from or to? This is the third hidden field
         // we use it to store what we are currently setting. It should be populated with "from" by default
@@ -109,7 +112,13 @@ jQuery(function($) {
             from.val(selParts[0] + '-' + selParts[1] + '-' + selParts[2]);
             to.val(nextDay.getFullYear() + '-' + (nextDay.getMonth() + 1) + '-' + nextDay.getDate());
             $('#arrival').datepicker('setDate', currentDay);
+<<<<<<< HEAD
             $('#departure').datepicker('setDate', nextDay);
+=======
+            $('#departure')
+                .datepicker('option', 'minDate', currentDay)
+                .datepicker('setDate', nextDay);
+>>>>>>> master
         } else {
             // selDate is "to"
             to.val(selParts[0] + '-' + selParts[1] + '-' + selParts[2]);

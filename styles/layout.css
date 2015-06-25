@@ -170,7 +170,8 @@
     display: block;
 }
 
-.booking-search-form input[type=text] {
+.booking-search-form input[type=text],
+.booking-search-form .ui-selectmenu-button {
     font-size: 1.2em;
 }
 
@@ -451,6 +452,14 @@
 
 .rate-tnc-dialog {
     padding: 20px;
+}
+
+.hotel-rate {
+    background-color: #F9F9F9;
+    padding: 8px 12px;
+    font-size: 1.2em;
+    text-align: right;
+    border-top: 1px solid #F3F3F3;
 }
 /**
  * Booking Form
