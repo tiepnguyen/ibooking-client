@@ -6,8 +6,6 @@
 	<title>Reservation - Modern Hotel</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="styles/style.css">
-	<script src="scripts/jquery-1.11.2.min.js"></script>
-	<script src="scripts/jquery-ui-1.11.4.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -41,7 +39,7 @@
 			<div class="breadcrumb-nav">
 				<ul>
 					<li class="active">Select Dates</li>
-					<li>Room &amp; Rate</li>
+					<li class="active">Room &amp; Rate</li>
 					<li>Checkout</li>
 					<li>Review</li>
 					<li>Confirmation</li>
@@ -51,24 +49,13 @@
 				<div class="container-box">
 					<h3 class="box-title">Your Stay</h3>
 					<div class="box-content">
-						<form action="index.html" class="booking-search-form" id="booking-search-form">
+						<form action="" class="booking-search-form">
 							<table class="form-table wide">
-								<tr>
-									<td>
-										<h4 class="form-label-title">Hotel</h4>
-										<select class="selectmenu" id="property_select">
-											<option value="0">All Properties</option>
-											<option value="suites">Discovery Suites</option>
-											<option value="shores">Discovery Shores</option>
-											<option value="country_side">Discovery Country Side</option>
-										</select>
-									</td>
-								</tr>
 								<tr>
 									<td>
 										<h4 class="form-label-title">Arrival</h4>
 										<label class="datepicker-label">
-											<input type="text" class="datepicker" id="arrival" placeholder="Arrival" value="Friday, 29 May 2015" readonly>
+											<input type="text" class="datepicker" id="arrival" placeholder="Arrival" value="Thursday, 21 May 2015" readonly>
 											<input type="text" name="arrival" class="hide datepicker-alt" placeholder="Arrival" value="">
 										</label>
 									</td>
@@ -77,7 +64,7 @@
 									<td>
 										<h4 class="form-label-title">Departure</h4>
 										<label class="datepicker-label">
-											<input type="text" class="datepicker" id="departure" placeholder="Departure" value="Saturday, 30 May 2015" readonly>
+											<input type="text" class="datepicker" id="departure" placeholder="Departure" value="Friday, 22 May 2015" readonly>
 											<input type="text" name="departure" class="hide datepicker-alt" placeholder="Arrival" value="">
 										</label>
 									</td>
@@ -98,58 +85,72 @@
 										</div>
 									</td>
 								</tr>
+								<tr>
+									<td>
+										<button type="submit"><i class="fa fa-search"></i> Check Availability</button>
+									</td>
+								</tr>
 							</table>
 						</form>
 					</div>
 				</div>
 			</aside>
 			<main class="body-main">
-				<!-- <div class="container-box"> -->
-				<div class="master-datepicker" id="master-datepicker"></div>
-				<input type="hidden" id="from_date" value="2015-05-29">
-				<input type="hidden" id="to_date" value="2015-05-30">
-				<input type="hidden" id="current_setting" value="from">
-				<br>
-				<div class="text-right">
-					<button type="submit" id="alt_submit_button"><i class="fa fa-search"></i> Check Availability</button>
-				</div>
-				<link rel="stylesheet" type="text/css" href="styles/home.css">
-				<script type="text/javascript">
-				window.availableDates = {
-					'2015-06-01': '$150',
-					'2015-06-02': '$150',
-					'2015-06-03': '$150',
-					'2015-06-04': '$150',
-					'2015-06-05': '$150',
-					'2015-06-06': '$150',
-					'2015-06-07': '$150',
-					'2015-06-08': '$150',
-					'2015-06-09': '$150',
-					'2015-06-10': '$150',
-					'2015-06-11': '$150',
-					'2015-06-12': '$150',
-					'2015-06-13': '$150',
-					'2015-06-14': '$150',
-					'2015-06-15': '$150',
-					'2015-06-16': '$150',
-					'2015-06-17': '$150',
-					'2015-06-18': '$150',
-					'2015-06-19': '$150',
-					'2015-06-20': '$150',
-					'2015-06-21': '$150',
-					'2015-06-22': '',
-					'2015-06-23': '',
-					'2015-06-24': '',
-					'2015-06-25': '$150',
-					'2015-06-26': '$250',
-					'2015-06-27': '$250',
-					'2015-06-28': '$250',
-					'2015-06-29': '$250',
-					'2015-06-30': '$250',
-				};
-				</script>
-				<script type="text/javascript" src="scripts/home.js"></script>
-				<!-- </div> -->
+				<form action="inform.html">
+					<div class="room-list">
+						<li class="room-item container-box">
+							<div class="room-photo-frame">
+								<img src="images/rs_270x0_Deluxe.jpg" alt="">
+								<div class="photo-zoom-button"><i class="fa fa-search-plus"></i></div>
+							</div>
+							<div class="room-text">
+								<h2 class="room-name"><a href="#">Discovery Suites</a></h2>
+								<p class="room-caption">
+									A 65 sqm Deluxe Studio Apartment consists of a combined lounge, dining and sleeping area (queen bed), full kitchen, bathroom, laundry and balcony.
+								</p>
+							</div>
+							<div class="hotel-rate">
+								<a href="#">
+									$150 - $250 / Night
+								</a>
+							</div>
+						</li>
+						<li class="room-item container-box">
+							<div class="room-photo-frame">
+								<img src="images/rs_270x0_standard-one-bedroom-(1).jpg" alt="">
+								<div class="photo-zoom-button"><i class="fa fa-search-plus"></i></div>
+							</div>
+							<div class="room-text">
+								<h2 class="room-name">Discovery Shores</h2>
+								<p class="room-caption">
+									A 65 sqm Standard One Bedroom Apartment (Un-refurbished) consist of a separate bedroom (queen bed), full kitchen, lounge and dining room, bathroom, laundry and balcony.
+								</p>
+							</div>
+							<div class="hotel-rate">
+								<a href="#">
+									$150 - $250 / Night
+								</a>
+							</div>
+						</li>
+						<li class="room-item container-box">
+							<div class="room-photo-frame">
+								<img src="images/rs_270x0_deluxe-two-bedroom-apartment_(4).jpg" alt="">
+								<div class="photo-zoom-button"><i class="fa fa-search-plus"></i></div>
+							</div>
+							<div class="room-text">
+								<h2 class="room-name">Discovery Country Side</h2>
+								<p class="room-caption">
+									A 65 sqm Deluxe One Bedroom Apartments consist of a separate bedroom (queen bed), full kitchen, lounge and dining room, bathroom, laundry and balcony.
+								</p>
+							</div>
+							<div class="hotel-rate">
+								<a href="#">
+									$150 - $250 / Night
+								</a>
+							</div>
+						</li>
+					</div>
+				</form>
 			</main>
 		</div>
 		<div class="clear"></div>
@@ -163,6 +164,8 @@
 			</div>
 		</div>
 	</footer>
+	<script src="scripts/jquery-1.11.2.min.js"></script>
+	<script src="scripts/jquery-ui-1.11.4.min.js"></script>
 	<script src="scripts/script.js"></script>
 	<!-- end of document -->
 </body>

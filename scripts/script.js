@@ -1,11 +1,15 @@
 jQuery(function($) {
 
+    $('.selectmenu').selectmenu();
     $('.spinner').spinner();
     $('.slider').slider({
         range: true,
         values: [0, 100]
     });
 
+    $('#property_select').on('selectmenuchange', function(e, ui) {
+        console.log(ui.item.value);
+    })
 
     var datepicker = $('.datepicker');
     datepicker.each(function() {
